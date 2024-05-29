@@ -3,17 +3,26 @@ var gSize = 150
 
 var cycles = 0
 var gameInterval = null
+var moves = 0
 //Define Ball1 and Ball2
 var ball1 = document.querySelector('.ball1')
 var ball2 = document.querySelector('.ball2')
+var gMove = []
+
 
 function onBallClick(elBall, maxDiameter) {
+    moves++
     if (gSize > maxDiameter || gSize > 400) gSize = 100
     elBall.style.width = `${gSize}px`
     elBall.style.height = `${gSize}px`
     elBall.innerText = gSize
     elBall.style.backgroundColor = getRandomColor()
     gSize += getRandomInt(20, 60)
+    gMove.push({
+        id: elBall.classList[1],
+        move: moves,
+        size: `${gSize}px` 
+    })
 }
 
 function swapColorAndSize() {
@@ -69,6 +78,9 @@ function changeBackground() {
 
 function resetGame() {
     // Define variable for default sizing
+    clearInterval(gameInterval)
+    gameInterval = null
+    cycles = 0
     var size = '100px'
     //Reset values
     ball1.style.width = size
@@ -77,9 +89,12 @@ function resetGame() {
     ball2.style.width = size
     ball2.style.height = size
     ball2.innerText = size.split('px')[0]
+
+    gMove = []
 }
 
 function startInterval() {
+    if (gameInterval) return;
     setTimeout(() => {
         gameInterval = setInterval(() => {
             onBallClick(ball1, 200)
@@ -94,4 +109,12 @@ function stopInterval() {
     clearInterval(gameInterval)
     gameInterval = null
     cycles = 0
+}
+
+function undoMove() {
+
+}
+
+function redoMove() {
+
 }

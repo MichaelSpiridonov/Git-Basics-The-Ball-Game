@@ -48,3 +48,15 @@ h1 {
     margin-top: 20px;
     background-color: brown;
 }
+
+.btn-container {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.btn-container span {
+    padding: 10px;
+    margin: 10px;
+}
