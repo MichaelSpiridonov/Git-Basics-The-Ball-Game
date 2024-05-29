@@ -17,7 +17,7 @@ h1 {
     font-weight: bold;
     font-size: 22;
 
-    transition: width 1s, height 1s ;
+    transition: width 1s, height 1s;
 }
 
 .ball1 {
@@ -27,4 +27,9 @@ h1 {
 .ball2 {
     margin-top: 20px;
     background-color: red;
+}
+
+.ball3 {
+    margin-top: 20px;
+    background-color: aqua;
 }
