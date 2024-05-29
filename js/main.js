@@ -48,6 +48,7 @@ function DecreaseBalls() {
     //Obtain random subtraction number
     var rndSubtract = getRandomInt(20, 60)
     var size
+
     // Subtract from both
     size = +ball1.style.width.split('px')[0] - rndSubtract + 'px'
     if (size.split('px')[0] < 100) size = '100px'
@@ -59,4 +60,12 @@ function DecreaseBalls() {
     ball2.style.width = size
     ball2.style.height = size
     ball2.innerText = size.split('px')[0]
+}
+
+function changeBackground() {
+    //Define Element Body
+    var elBody = document.querySelector('.body')
+
+    //Change the color of the background as the assignment suggests
+    elBody.style.backgroundColor = getRandomColor()
 }
