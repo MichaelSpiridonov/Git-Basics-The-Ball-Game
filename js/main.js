@@ -1,7 +1,10 @@
 'use strict'
+var gSize = 150
 
 function onBallClick(elBall) {
-    elBall.style.width = '150px'
-    elBall.style.height = '150px'
-    elBall.innerText = '150'
+    if (gSize > 400) gSize = 100
+    elBall.style.width = `${gSize}px`
+    elBall.style.height = `${gSize}px`
+    elBall.innerText = gSize
+    gSize += 50
 }
