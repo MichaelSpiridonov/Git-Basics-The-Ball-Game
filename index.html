@@ -15,7 +15,14 @@
     <div class="ball ball5" onclick="changeBackground()">
       Change Background Color
     </div>
-    <div class="ball ball6" onclick="resetGame()">Reset Game</div>
+    <div
+      class="ball ball6"
+      onclick="resetGame()"
+      onmouseover="startInterval()"
+      onmouseout="stopInterval()"
+    >
+      Reset Game
+    </div>
     <script src="js/util.js"></script>
     <script src="js/main.js"></script>
   </body>

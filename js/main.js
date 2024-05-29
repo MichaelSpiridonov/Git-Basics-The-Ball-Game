@@ -1,6 +1,8 @@
 'use strict'
 var gSize = 150
 
+var cycles = 0
+var gameInterval = null
 //Define Ball1 and Ball2
 var ball1 = document.querySelector('.ball1')
 var ball2 = document.querySelector('.ball2')
@@ -75,4 +77,21 @@ function resetGame() {
     ball2.style.width = size
     ball2.style.height = size
     ball2.innerText = size.split('px')[0]
+}
+
+function startInterval() {
+    setTimeout(() => {
+        gameInterval = setInterval(() => {
+            onBallClick(ball1, 200)
+            onBallClick(ball2, 200)
+            cycles++
+            if (cycles > 9) stopInterval()
+        }, 2000)
+    }, 2000)
+}
+
+function stopInterval() {
+    clearInterval(gameInterval)
+    gameInterval = null
+    cycles = 0
 }
