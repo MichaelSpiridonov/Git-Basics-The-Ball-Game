@@ -38,3 +38,25 @@ function swapColorAndSize() {
     ball2.innerText = ball1Size.split('px')[0]
 
 }
+
+
+function DecreaseBalls() {
+    //Define Ball1 and Ball2
+    var ball1 = document.querySelector('.ball1')
+    var ball2 = document.querySelector('.ball2')
+
+    //Obtain random subtraction number
+    var rndSubtract = getRandomInt(20, 60)
+    var size
+    // Subtract from both
+    size = +ball1.style.width.split('px')[0] - rndSubtract + 'px'
+    if (size.split('px')[0] < 100) size = '100px'
+    ball1.style.width = size
+    ball1.style.height = size
+    ball1.innerText = size.split('px')[0]
+    size = +ball1.style.width.split('px')[0] - rndSubtract + 'px'
+    if (size.split('px')[0] < 100) size = '100px'
+    ball2.style.width = size
+    ball2.style.height = size
+    ball2.innerText = size.split('px')[0]
+}
