@@ -1,4 +1,4 @@
-body{
+body {
     background-color: black;
 }
 
@@ -9,6 +9,11 @@ h1 {
 .ball {
     width: 100px;
     height: 100px;
-    background-color: yellow;
     margin: auto;
+
+    background-color: yellow;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 22;
 }
